@@ -1,0 +1,25 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: *
+
+defaults:
+  run:
+    working-directory: container/Docker
+    
+
+jobs:
+  test:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+        
+      - name: build docker image
+        run: |
+          docker build -t mssql-bak-bacpac .
+        
+        
