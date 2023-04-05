@@ -38,7 +38,7 @@ $Location = 'eastus'
 #This is the name of the storage account that the backups and bacpacs will be stored in
 # must be unique across Azure
 StorageResourceGroupName = 'satya(ch)-training'
-$StorageAccountName = 'beardsqlbakssatya'
+$StorageAccountName = 'ch9teststorageaccount'
 
 # This is the name of the share that will be created in the Storage account for storing the backups
 $ShareName = 'baks'
@@ -64,10 +64,10 @@ $AcrUserSecretName = 'acr-pull-user'
 $AcrPassSecretName = 'acr-pull-pass'
 
 # This is the name of the Azure SQL Server. It will be created if it does not exist
-$SqlServerName = 'beardsqldbsfrombak'
+$SqlServerName = 'satya-test-server'
 
 # This is the name of the Admin user for the Azure SQL Database
-$SqlAdminUser = 'sql-admin'
+$SqlAdminUser = 'satya'
 
 # This is the password for the admin user for the Azure SQL Database
 
