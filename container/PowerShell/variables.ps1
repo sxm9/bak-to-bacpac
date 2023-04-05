@@ -27,13 +27,13 @@ $localDockerHostDirectory = 'F:\BackupShare'
 
 # This is the name of the Azure Subscription
 
-$AzureSubscriptionName = ''
+$AzureSubscriptionName = 'Azure subscription 2'
 
 # This is the name of the Resource Group - will be created if it does not exist
-$ResourceGroupName = 'sqlcontainers'
+$ResourceGroupName = 'satya(ch)-training'
 
 # The location in Azure in the northeurope format not North Europe
-$Location = 'northeurope'
+$Location = 'eastus'
 
 #This is the name of the storage account that the backups and bacpacs will be stored in
 # must be unique across Azure
@@ -44,10 +44,10 @@ $ShareName = 'baks'
 
 # This is the name of the Key Vault - It will be created if it does not exist and
 # must be unique across Azure
-$KVName = 'beardkvsqlcontainers1'
+$KVName = 'beardkvsqlcontainers'
 
 # This is the user who will have access to the Key Vault to set and retrieve secrets
-$UserForKeyVault = 'mrrobsewell_gmail.com#EXT#@mrrobsewellgmail.onmicrosoft.com'
+$UserForKeyVault = 'satyabrata@comp9260gmail.onmicrosoft.com'
 
 # This is the name of the Azure Container Registry that will be created
 # must be unique across Azure
