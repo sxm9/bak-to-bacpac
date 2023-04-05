@@ -37,7 +37,7 @@ $Location = 'eastus'
 
 #This is the name of the storage account that the backups and bacpacs will be stored in
 # must be unique across Azure
-StorageResourceGroupName = 'satya(ch)-training'
+$StorageResourceGroupName = 'satya(ch)-training'
 $StorageAccountName = 'ch9teststorageaccount'
 
 # This is the name of the share that will be created in the Storage account for storing the backups
