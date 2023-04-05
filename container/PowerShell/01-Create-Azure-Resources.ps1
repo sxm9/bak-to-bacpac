@@ -98,6 +98,8 @@ function New-ContainerStorageSetUp {
     if ($null -eq $StorageAccount) {
         # create the storage account
         $StorageAccount = New-AzStorageAccount @StorageAcctParams -Location $Location -SkuName Standard_LRS
+    } else {
+        Write-Host "StorageAccount ($StorageAccount) exists."
     }
 
     # check if the file share already exists
@@ -113,6 +115,8 @@ function New-ContainerStorageSetUp {
     if ($null -eq $Share) {
         # create the share
         $Share = New-AzStorageShare @AzShareParams
+    } else {
+        Write-Host "Fileshare ($Share) exists."
     }
 
     <# Add a container for blob storage also, same name #>
@@ -128,6 +132,8 @@ function New-ContainerStorageSetUp {
     if ($null -eq $Container) {
         # create the container
         $Container = New-AzStorageContainer @AzStorageContainerParams
+    } else {
+        Write-Host "Azure container ($Container) exists."
     }
     <# End blob storage #>
 
@@ -228,8 +234,12 @@ $ACRCred = Get-AzContainerRegistryCredential -Registry $ACRNameObj
 # Call docker login, passing in password 
 $ACRCred.Password | docker login $ACRNameObj.LoginServer --username $ACRCred.Username --password-stdin
 
+Write-Host "ACRNameObj is ($ACRNameObj), ACRCred is ($ACRCred)"
+
 # Tag image 
 $ImagePath = $ACRNameObj.LoginServer + '/' + $ACRPath
+Write-Host "ImagePath is ($ImagePath)"
+
 docker tag mssql-bak-bacpac $ImagePath
 
 # Push image to repository 
