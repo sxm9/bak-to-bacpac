@@ -81,7 +81,7 @@ Set-AzKeyVaultAccessPolicy @SetAzKVAccessPolicy
 # Create function to create storage account and file share, and generate key 
 
 function New-ContainerStorageSetUp {
-    param( [string]$ResourceGroupName, 
+    param( [string]$StorageResourceGroupName, 
         [string]$StorageAccountName, 
         [string]$ShareName,
         [string]$Location)
@@ -89,7 +89,7 @@ function New-ContainerStorageSetUp {
     # check if storage account exists
 
     $StorageAcctParams = @{
-        ResourceGroupName = $ResourceGroupName
+        ResourceGroupName = $StorageResourceGroupName
         Name              = $StorageAccountName
         ErrorAction       = 'SilentlyContinue'
     }
@@ -132,7 +132,7 @@ function New-ContainerStorageSetUp {
     <# End blob storage #>
 
     # get the credentials
-    $StorageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName $ResourceGroupName -Name $StorageAccountName
+    $StorageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName $StorageResourceGroupName -Name $StorageAccountName
     $StorageAccountKey = $StorageAccountKeys[0].Value
     $StorageAccountKeySecureString = ConvertTo-SecureString $StorageAccountKey -AsPlainText -Force
     $StorageAccountCredentials = New-Object System.Management.Automation.PSCredential ($StorageAccountName, $StorageAccountKeySecureString)
