@@ -37,7 +37,8 @@ $Location = 'eastus'
 
 #This is the name of the storage account that the backups and bacpacs will be stored in
 # must be unique across Azure
-$StorageAccountName = 'beardsqlbaks'
+StorageResourceGroupName = 'satya(ch)-training'
+$StorageAccountName = 'beardsqlbakssatya'
 
 # This is the name of the share that will be created in the Storage account for storing the backups
 $ShareName = 'baks'
