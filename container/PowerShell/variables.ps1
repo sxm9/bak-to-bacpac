@@ -52,7 +52,7 @@ $UserForKeyVault = 'satyabrata@comp9260gmail.onmicrosoft.com'
 
 # This is the name of the Azure Container Registry that will be created
 # must be unique across Azure
-$ACRName = 'beardacrsqlcontainers'
+$ACRName = 'beardacrsqlcontainersd'
 
 # This is the name of the Key Vault secret that will hold the Storage Account SAS key
 $AcctKeySecretName = 'storage-acct-key'
