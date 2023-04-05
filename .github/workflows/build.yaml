@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: container/Docker
+    working-directory: Docker
     
 
 jobs:
